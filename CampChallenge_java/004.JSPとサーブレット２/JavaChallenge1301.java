@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -23,7 +23,7 @@ public class JavaChallenge1301 extends HttpServlet {
         pw.print("坪木一誠<br>");
         pw.print("1995年8月27日生まれです。<br>");
         pw.print("よろしくお願いします！！<br>");
-        return false;
+        return true;
     }
 
     /**
