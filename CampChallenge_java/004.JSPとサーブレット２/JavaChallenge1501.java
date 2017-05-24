@@ -19,26 +19,35 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/JavaChallenge1501"})
 public class JavaChallenge1501 extends HttpServlet {
     
-     String[] data(int id){
+     String[] data(String id){
          
           String[] data1 = {"1","名前1","生年月日1","住所1"};
-         
-       switch(id){
+          String[] data2 = {"2","名前2","生年月日2","住所2"};
+          String[] data3 = {"3","名前3","生年月日3","住所3"};
+       for(int i=1;i<=3;i++){ 
+         switch(i){
+           case 1:
+               for(String value:data1){
+                 if(id == value){
+                     return data1;
+                 }  
+               }
            case 2:
-               data1[0]="2";
-               data1[1]="名前2";
-               data1[2]="生年月日2";
-               data1[3]="住所2";
-               break;
+               for(String value:data2){
+                 if(id == value){
+                     return data2;
+                 }  
+               }
            case 3:
-               data1[0]="3";
-               data1[1]="名前3";
-               data1[2]="生年月日3";
-               data1[3]="住所3";
-               break;
+               for(String value:data3){
+                 if(id == value){
+                     return data3;
+                 }  
+               }
            
+         }
        }
-       return data1;
+       return null;
      }
 
     /**
@@ -54,14 +63,13 @@ public class JavaChallenge1501 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
-            int id =1;
             
-            String[] data1 = data(id);
-            out.println(data1[1]);
-            out.println(data1[2]);
-            out.println(data1[3]);
+            String id = "1";
             
+            for(int x=1;x<=3;x++){
+                out.println(data(id)[x]);
+            }
+                
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -69,7 +77,7 @@ public class JavaChallenge1501 extends HttpServlet {
             out.println("<title>Servlet JavaChallenge1501</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet JavaChallenge1501 at " + request.getContextPath() + "</h1>");
+            out.println("<h1></h1>");
             out.println("</body>");
             out.println("</html>");
         }
