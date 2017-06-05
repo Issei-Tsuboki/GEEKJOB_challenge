@@ -13,6 +13,8 @@ public class moji02 {
     public static void main(String[] args){
         String mail = "issei.yui.ccs@gmail.com";
         
-        System.out.print(mail.substring(14));
+        int at = mail.indexOf("@");
+        
+        System.out.print(mail.substring(at));
     }
 }
